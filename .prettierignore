@@ -8,3 +8,4 @@ next.config.ts
 playwright.config.ts
 src/app/page.tsx
 tailwind.config.js
+test-results
