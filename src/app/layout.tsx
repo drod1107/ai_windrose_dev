@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="emotion-insertion-point" />
+        <meta name="emotion-insertion-point" content="" />
       </head>
       {/* ThemeRegistry handles MUI theme and color mode */}
       <body className="min-h-screen flex flex-col">
