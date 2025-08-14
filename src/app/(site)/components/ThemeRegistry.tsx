@@ -19,7 +19,19 @@ interface Props {
 const ThemeInner = ({ children }: Props) => {
   const { mode } = useColorMode();
   const theme = useMemo(() => createAppTheme(mode), [mode]);
-  const cache = useMemo(() => createCache({ key: "mui", prepend: true }), []);
+  const cache = useMemo(() => {
+    const emotionInsertionPoint =
+      typeof document !== "undefined"
+        ? (document.querySelector(
+            "meta[name='emotion-insertion-point']",
+          ) as HTMLElement | null)
+        : null;
+
+    return createCache({
+      key: "mui",
+      insertionPoint: emotionInsertionPoint ?? undefined,
+    });
+  }, []);
 
   return (
     <CacheProvider value={cache}>
