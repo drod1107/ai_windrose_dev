@@ -44,7 +44,7 @@ export const WhatsInside = () => (
       <Typography
         component="h2"
         variant="h4"
-        className="mb-8 text-center font-semibold"
+        className="m-20 pb-10 text-center font-semibold"
       >
         What’s Inside
       </Typography>
