@@ -3,8 +3,9 @@
 
 "use client";
 
-import { ReactNode, useMemo } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 import createCache from "@emotion/cache";
+import type { EmotionCache } from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";
@@ -19,7 +20,18 @@ interface Props {
 const ThemeInner = ({ children }: Props) => {
   const { mode } = useColorMode();
   const theme = useMemo(() => createAppTheme(mode), [mode]);
-  const cache = useMemo(() => createCache({ key: "mui", prepend: true }), []);
+  const [cache, setCache] = useState<EmotionCache | null>(null);
+
+  useEffect(() => {
+    const meta = document.querySelector<HTMLMetaElement>(
+      "meta[name='emotion-insertion-point']",
+    );
+    setCache(createCache({ key: "mui", insertionPoint: meta ?? undefined }));
+  }, []);
+
+  if (!cache) {
+    return null;
+  }
 
   return (
     <CacheProvider value={cache}>
