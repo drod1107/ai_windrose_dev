@@ -12,7 +12,7 @@ export default function PaperPage() {
   // Path to the PDF stored in the public folder
   const pdfPath = "/paper.pdf";
   // Placeholder citation text displayed in the citation block
-  const citationText = "Doe, J. (2024). AI Safety Paper. Windrose Publishing.";
+  const citationText = "Rodriguez, D. The State of AI Safety for Parents & Educators, 2025 - First Edition. Sullivan, MO: Windrose & Company; 2025. Available from https://ai_safety.windrose.dev";
   // Static URL used for social shares; adjust in production for accuracy
   const shareUrl = "https://example.com/paper";
 
