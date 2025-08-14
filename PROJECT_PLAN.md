@@ -72,7 +72,7 @@ Be deployable on Vercel with minimal setup.
 
     Deliverables: src/app/page.tsx
 
-4) Paper Page
+4) Paper Page (Completed)
 
     Add src/public/paper.pdf placeholder; render with:
 
