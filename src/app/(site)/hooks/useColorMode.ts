@@ -27,16 +27,24 @@ const ColorModeContext = createContext<ColorModeContextValue | undefined>(
 
 // Provider handling system preference, localStorage, and change events.
 export const ColorModeProvider = ({ children }: { children: ReactNode }) => {
-  const [mode, setMode] = useState<PaletteMode>(() => {
-    if (typeof window === "undefined") return "light";
+  const [mode, setMode] = useState<PaletteMode>("light");
+
+  // On mount read saved preference or system setting.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
     const stored = window.localStorage.getItem(
       STORAGE_KEY,
     ) as PaletteMode | null;
-    if (stored) return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
+    const preferred =
+      stored ??
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+    setMode(preferred);
+    const root = document.documentElement;
+    root.classList.remove(preferred === "light" ? "dark" : "light");
+    root.classList.add(preferred);
+  }, []);
 
   // Persist to localStorage and update html class for Tailwind dark mode.
   useEffect(() => {
