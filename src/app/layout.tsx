@@ -25,6 +25,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="emotion-insertion-point" />
+      </head>
       {/* ThemeRegistry handles MUI theme and color mode */}
       <body className="min-h-screen flex flex-col">
         <ThemeRegistry>
