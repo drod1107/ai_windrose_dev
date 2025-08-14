@@ -8,13 +8,10 @@ export const metadata = {
   title: "Blog",
 };
 
-export default async function BlogPage({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string>>;
-}) {
-  const params = await searchParams;
-  const page = parseInt(params.page ?? "1", 10);
+export default async function BlogPage({ searchParams }: { searchParams?: Promise<Record<string, string>> }) {
+  const resolved = await (searchParams as Promise<Record<string, string>> | undefined);
+  const params: Record<string, string> = (resolved as Record<string, string>) ?? {};
+  const page = parseInt((params.page as string) ?? "1", 10);
   const allPosts = getAllPosts();
   const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
   const start = (page - 1) * POSTS_PER_PAGE;
