@@ -4,4 +4,5 @@ out
 dist
 coverage
 .env*
+!.env.example
 tsconfig.tsbuildinfo

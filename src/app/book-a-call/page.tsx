@@ -1,7 +1,8 @@
 import { Box, Link, Typography } from "@mui/material";
 
 export default function BookACallPage() {
-  const calendarUrl = "https://calendar.google.com"; // placeholder; replace with actual link
+  const calendarUrl =
+    process.env.NEXT_PUBLIC_CALENDAR_URL || "https://calendar.google.com";
 
   return (
     <Box
