@@ -15,7 +15,7 @@ export default function SubscribePage() {
         Subscribe for new resources and research updates. We’ll never share your
         email.
       </Typography>
-      <NewsletterForm source="subscribe-page" />
+      <NewsletterForm />
       <Typography variant="body2" color="text.secondary">
         We respect your privacy. Unsubscribe anytime.
       </Typography>

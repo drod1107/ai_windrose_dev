@@ -6,9 +6,9 @@ GOAL: Build and deploy a production‑ready website for my AI Safety project. Co
 
 Host and display my full paper (PDF) with download.
 
-Offer email capture (saved to Vercel Postgres) with double‑opt‑in-ready architecture.
+Offer email capture (Google Calendar event link form) with double‑opt‑in-ready architecture.
 
-Provide a Blog (MDX) with tags, RSS, and SEO.
+Provide a Blog (MDX) with tags and SEO.
 
 Include a Book a Call page that embeds my Google Appointment scheduling link.
 
@@ -31,10 +31,6 @@ Be deployable on Vercel with minimal setup.
     Styling: tailwindcss postcss autoprefixer
 
     MDX blog: @next/mdx gray-matter remark remark-gfm
-
-    DB: @vercel/postgres prisma @prisma/client
-
-    SEO/feeds: next-sitemap rss
 
     Misc: zod date-fns
 
@@ -114,48 +110,17 @@ Be deployable on Vercel with minimal setup.
 
     Add “Last updated” and related posts by tag.
 
-    Add RSS feed at /rss.xml and sitemap via next-sitemap.
-
     Deliverables: routes src/app/blog/page.tsx, src/app/blog/[slug]/page.tsx, MDX loader, content/blog/example.mdx, feed & sitemap config.
 
-7) Subscribe (Email Capture → Vercel Postgres)
+7) Subscribe (Google Form)
 
-    Add Prisma with a Subscriber model:
-
-    datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
-    generator client { provider = "prisma-client-js" }
-
-    model Subscriber {
-    id        String   @id @default(cuid())
-    email     String   @unique
-    createdAt DateTime @default(now())
-    confirmed Boolean  @default(false)
-    source    String?
-    }
-
-    Create /api/subscribe (POST): validate with Zod, check duplicate, insert record.
-
-    Add a hidden honeypot field for spam mitigation.
-
-    Return friendly messages; no real email sending yet (we’ll add provider later).
-
-    Create a /subscribe page with a larger form and privacy note.
-
-    Deliverables: prisma/schema.prisma, /api/subscribe/route.ts, src/app/subscribe/page.tsx, DB migration scripts.
+   Google embedded form
 
 8) Book a Call
 
-    Create /book-a-call page that embeds my Google Calendar Appointment link (I’ll paste the URL later).
-
-    Provide fallback direct link if iframe is blocked by X‑Frame‑Options.
-
-    Deliverables: src/app/book-a-call/page.tsx with an iframe embed component and fallback.
+    Google embedded form
 
 9) Env, Secrets, Deploy
-
-    Add Vercel Postgres: create DB, set DATABASE_URL locally and on Vercel.
-
-    Add a scripts section to run prisma migrate deploy on build.
 
     Provide a README.md with:
 
@@ -197,14 +162,8 @@ Be deployable on Vercel with minimal setup.
 
     Home, Paper (inline view + download), Resources, Blog (index + post), Subscribe (form), Book a Call (embed)
 
-    /api/subscribe writes emails to Vercel Postgres; duplicate safe; honeypot present
-
-    Blog MDX pipeline functional with example post, RSS at /rss.xml, sitemap working
+    Blog MDX pipeline functional with example post,  sitemap working
 
     Responsive, accessible, clean MUI x Tailwind styling
 
     Clear README with next steps (how to add content, envs, deploy)
-
----
-
-When you’re ready, begin. Show your step-by-step plan, then execute phase 0. Pause after each phase for my review.

@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>http://localhost:3000/blog/teaser</loc><lastmod>2025-08-19T17:13:20.656Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/resources/home-ai-safety-checklist</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/subscribe</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/resources/policy-brief</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/resources/abstract</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/resources/school-readiness-matrix</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/book-a-call</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/resources</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/resources/executive-summary</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/paper</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/license</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ai.windrose.dev/blog/teaser</loc><lastmod>2025-08-19T19:11:51.756Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

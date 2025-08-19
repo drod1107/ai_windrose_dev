@@ -3,27 +3,31 @@ import { format } from "date-fns";
 import { notFound } from "next/navigation";
 import mdxComponents from "@/components/mdx";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
+import { Metadata } from "next";
+
+
+type GenerateMetadataProps = {
+  params: Promise<{ slug: string }>;
+}
+
+type PageProps = {
+  params: Promise<{ slug: string }>;
+}
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = params;
-  const { meta } = await getPostBySlug(slug);
-  return { title: meta.title, description: meta.excerpt };
+
+export async function generateMetadata({ params }: GenerateMetadataProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+  return { title: post.meta.title, description: post.meta.excerpt };
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = params;
+
+export default async function PostPage({ params }: PageProps) {
+  const { slug } = await params;
   try {
     const { meta, Content, lastUpdated } = await getPostBySlug(slug);
     const related = getAllPosts()
