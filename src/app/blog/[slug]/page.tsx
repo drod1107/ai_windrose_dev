@@ -11,9 +11,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
   const { meta } = await getPostBySlug(slug);
   return { title: meta.title, description: meta.excerpt };
 }
@@ -21,15 +21,15 @@ export async function generateMetadata({
 export default async function PostPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
   try {
     const { meta, Content, lastUpdated } = await getPostBySlug(slug);
     const related = getAllPosts()
       .filter(
         (p) =>
-          p.slug !== meta.slug && p.tags.some((t) => meta.tags.includes(t)),
+          p.slug !== meta.slug && p.tags.some((t) => meta.tags.includes(t))
       )
       .slice(0, 3);
 

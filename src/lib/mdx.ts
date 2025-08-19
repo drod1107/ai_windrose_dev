@@ -37,18 +37,40 @@ export function getAllPosts(): PostMeta[] {
 }
 
 export async function getPostBySlug(slug: string) {
-  const filePath = path.join(postsDir, `${slug}.mdx`);
+  // try filename match first
+  let base = slug;
+  let filePath = path.join(postsDir, `${base}.mdx`);
+
+  if (!fs.existsSync(filePath)) {
+    // fallback: find a file whose front matter slug matches
+    const candidates = fs.readdirSync(postsDir).filter(f => f.endsWith(".mdx"));
+    const match = candidates.find((fname) => {
+      const full = path.join(postsDir, fname);
+      const { data } = matter.read(full);
+      const fm = data as Partial<PostMeta>;
+      const filenameSlug = fname.replace(/\.mdx$/, "");
+      return (fm.slug || filenameSlug) === slug;
+    });
+
+    if (!match) {
+      throw new Error("not found");
+    }
+    base = match.replace(/\.mdx$/, "");
+    filePath = path.join(postsDir, match);
+  }
+
   const { data } = matter.read(filePath);
-  const { default: Content } = await import(`../../content/blog/${slug}.mdx`);
+  const { default: Content } = await import(`../../content/blog/${base}.mdx`);
   const { mtime } = fs.statSync(filePath);
   const fm = data as Partial<PostMeta>;
+
   return {
     meta: {
-      title: fm.title || slug,
+      title: fm.title || base,
       date: fm.date || new Date(0).toISOString(),
       tags: fm.tags || [],
       excerpt: fm.excerpt || "",
-      slug: fm.slug || slug,
+      slug: fm.slug || base,
     },
     Content,
     lastUpdated: mtime.toISOString(),

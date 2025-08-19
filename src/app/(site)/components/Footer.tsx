@@ -11,21 +11,18 @@ export const Footer = () => (
     <Box className="flex flex-col items-center gap-2 text-sm" component="div">
       <Typography component="p">
         {/* Contact email */}
-        <MUILink href="mailto:info@example.com" className="underline">
-          info@example.com
+        <MUILink href="mailto:80010850+drod1107@users.noreply.github.com" className="underline">
+          Contact us directly
         </MUILink>
       </Typography>
       <Box className="flex gap-4" component="div">
         {/* Social placeholders */}
-        <MUILink href="#" component={NextLink} className="hover:underline">
-          Twitter
-        </MUILink>
-        <MUILink href="#" component={NextLink} className="hover:underline">
-          GitHub
+        <MUILink href="https://www.instagram.com/ai_safely" component={NextLink} className="hover:underline">
+          Instagram
         </MUILink>
       </Box>
-      <Typography component="p">
-        © {new Date().getFullYear()} · Content licensed under CC BY-SA.
+      <Typography component="p" className="text-center">
+        © {new Date().getFullYear()} · <MUILink href="/license" component={NextLink}>Custom License.</MUILink> <br />You may redistribute this for non-profit purposes only; all other rights reserved.
       </Typography>
     </Box>
   </footer>

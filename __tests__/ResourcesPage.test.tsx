@@ -12,8 +12,7 @@ describe("ResourcesPage", () => {
       {
         title: "School Readiness Matrix",
         href: "/resources/school-readiness-matrix",
-      },
-      { title: "AI Safety SWOT Analysis", href: "/resources/swot-analysis" },
+      }
     ];
     resources.forEach((r) => {
       expect(

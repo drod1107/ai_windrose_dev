@@ -64,7 +64,7 @@ Be deployable on Vercel with minimal setup.
 
     Hero section: title, 1‑line mission, 2 CTAs: Read the Paper and Subscribe for Updates.
 
-    “What’s inside” grid: Parents Guide, Educators Guide, Checklists, Readiness Matrix, etc. (link to resources page).
+    “What’s inside” grid: Parents Guide, Educators Guide, Readiness Matrix, etc. (link to resources page).
 
     Trust section: brief about openness, safety-first ethos; link to blog highlights.
 
@@ -88,7 +88,7 @@ Be deployable on Vercel with minimal setup.
 
 5) Resources Page
 
-    Curate cards: Home AI Safety Checklist, School Readiness Matrix, SWOT, etc.
+    Curate cards: Home AI Safety Checklist, School Readiness Matrix, etc.
 
     Each card → detail page (markdown‑ish) or external link to free assets.
 

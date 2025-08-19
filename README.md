@@ -37,7 +37,7 @@ A full-stack Next.js 15 application delivering AI safety resources for families 
 - Responsive layout with header, footer, and dark-mode toggle
 - Home page introducing the mission and newsletter signup
 - Paper page with inline PDF viewer, citation block, and share links
-- Resources page offering free checklists and matrices
+- Resources page offering free infographics and matrices
 - MDX blog with tag support, pagination, related posts, RSS, and sitemap
 - Subscribe page and `/api/subscribe` endpoint saving emails to Postgres
 - Book-a-call page embedding a scheduling link

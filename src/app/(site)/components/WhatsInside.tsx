@@ -22,11 +22,6 @@ const items = [
       "Integrate AI literacy, supervise classroom usage, and create clear reporting channels for harmful encounters.",
   },
   {
-    title: "Checklists",
-    description:
-      "Device setup, privacy controls, and disinformation response plans you can implement today.",
-  },
-  {
     title: "Readiness Matrix",
     description:
       "Assess your school or family’s safeguards and prioritize the next steps with a visual matrix.",
@@ -36,6 +31,16 @@ const items = [
     description:
       "Child‑first legislative proposals that ban perpetual data licensing and require moderation on youth-facing AI platforms.",
   },
+  {
+    title: "Home AI Safety Checklist",
+    description:
+      "A practical checklist for parents and educators to ensure safe AI usage at home and in the classroom.",
+  },
+  {
+    title: "School Readiness Matrix",
+    description:
+      "A tool for educators to evaluate and enhance their school's AI readiness and safety measures.",
+  }
 ];
 
 export const WhatsInside = () => (

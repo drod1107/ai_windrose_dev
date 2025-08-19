@@ -1,11 +1,11 @@
 import NextLink from "next/link";
 import { Box, Button, Link, Typography } from "@mui/material";
 
-export default function HomeSafetyPage() {
-  const pdfPath = "/resources/home-ai-safety-checklist.pdf";
+export default function AbstractPage() {
+  const pdfPath = "/resources/abstract.pdf";
   const citationText =
-    "Rodriguez D. Home AI Safety Checklist, 2025 - First Edition. Sullivan, MO: Windrose & Company; 2025.";
-  const shareUrl = "https://ai.windrose.dev/resources/home-ai-safety-checklist";
+    "Rodriguez D. Abstract of The State of AI Safety for Parents & Educators, 2025 - First Edition. Sullivan, MO: Windrose & Company; 2025.";
+  const shareUrl = "https://ai.windrose.dev/resources/abstract";
 
   return (
     <Box component="main" id="content" className="flex flex-col gap-8 p-4">

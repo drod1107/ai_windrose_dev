@@ -13,7 +13,7 @@ const links = [
   { href: "/blog", label: "Blog" },
   { href: "/resources", label: "Resources" },
   { href: "/subscribe", label: "Subscribe" },
-  { href: "/call", label: "Book a Call" },
+  { href: "/book-a-call", label: "Book a Call" },
 ];
 
 export const Header = () => (
@@ -29,7 +29,7 @@ export const Header = () => (
       <Box className="flex items-center gap-4 flex-wrap">
         <MUILink
           component={NextLink}
-          href="/"
+          href="https://www.windrose.dev"
           className="font-bold no-underline"
         >
           Windrose
