@@ -1,9 +1,10 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /404
 
 # Host
-Host: http://localhost:3000
+Host: https://ai.windrose.dev
 
 # Sitemaps
-Sitemap: http://localhost:3000/sitemap.xml
+Sitemap: https://ai.windrose.dev/sitemap.xml

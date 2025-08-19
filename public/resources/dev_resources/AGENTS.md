@@ -6,7 +6,6 @@
 - /src/components - Shared React components
 - /content/blog - MDX blog posts
 - /public - Static assets including paper.pdf
-- /prisma - Database schema and migrations
 
 ## Coding Conventions
 
