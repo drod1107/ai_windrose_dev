@@ -18,18 +18,27 @@ const resources: Resource[] = [
   {
     title: "Home AI Safety Checklist",
     description: "Practical steps to secure your home.",
-    href: "/resources/home-ai-safety-checklist",
+    href: "/resources/home-ai-safety-checklist"
   },
   {
     title: "School Readiness Matrix",
     description: "Evaluate how prepared your school is for AI integration.",
-    href: "/resources/school-readiness-matrix",
-  }
-  ,
+    href: "/resources/school-readiness-matrix"
+  },
   {
-    title: "AI Safety SWOT Analysis",
-    description: "Identify strengths, weaknesses, opportunities and threats for AI in your context.",
-    href: "/resources/swot-analysis",
+    title: "Executive Summary",
+    description: "A high-level overview of the key findings and recommendations.",
+    href: "/resources/executive-summary"
+  },
+  {
+    title: "Abstract",
+    description: "A brief summary of the key points and findings.",
+    href: "/resources/abstract"
+  },
+  {
+    title: "Policy Brief",
+    description: "Child‑first legislative proposals that ban perpetual data licensing and require moderation on youth-facing AI platforms.",
+    href: "/resources/policy-brief"
   }
 ];
 

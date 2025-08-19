@@ -1,8 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import NextLink from "next/link";
 import { Hero } from "./(site)/components/Hero";
 import { WhatsInside } from "./(site)/components/WhatsInside";
 import { TrustSection } from "./(site)/components/TrustSection";
-import { NewsletterForm } from "./(site)/components/NewsletterForm";
 
 export default function HomePage() {
   return (
@@ -18,9 +18,13 @@ export default function HomePage() {
           Get Field-Tested AI Safety Tips
         </Typography>
         <Typography className="max-w-2xl">
-          Join the Windrose newsletter for new resources, checklists, and research highlights. No spam—just actionable insights for families and schools.
+          Join the Windrose newsletter for new resources, checklists, and research highlights. No spam—just actionable insights for families and schools. (Coming Soon!)
         </Typography>
-        <NewsletterForm />
+        <Button component={NextLink} href="/subscribe" style={{ color: "white"}} variant="contained">
+          Subscribe to our AI Safety Newsletter,
+          <br />
+          specially designed for parents and educators.
+        </Button>
       </Box>
     </Box>
   );

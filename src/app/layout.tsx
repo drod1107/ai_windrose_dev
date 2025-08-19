@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeRegistry } from "./(site)/components/ThemeRegistry";
 import { Header } from "./(site)/components/Header";
 import { Footer } from "./(site)/components/Footer";
+import { Analytics } from "./(site)/components/Analytics";
 import { canonicalUrl, formatTitle } from "./(site)/lib/seo";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeRegistry>
+        <Analytics />
       </body>
     </html>
   );

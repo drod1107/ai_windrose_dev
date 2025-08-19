@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "prisma migrate deploy || echo 'Skipping database migration'; next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
@@ -12,7 +12,8 @@
     "test": "jest",
     "test:e2e": "playwright test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "migrate:deploy": "prisma migrate deploy"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -33,6 +34,8 @@
     "prisma": "^6.14.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-markdown": "^10.1.0",
+    "rehype-raw": "^7.0.0",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
     "remark-mdx": "^3.1.0",
@@ -43,6 +46,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@playwright/test": "^1.54.2",
+    "@tailwindcss/typography": "^0.5.16",
     "@testing-library/jest-dom": "^6.7.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -56,6 +60,7 @@
     "eslint-config-prettier": "^10.1.8",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",
+    "node-fetch": "^2.7.0",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "tailwindcss": "^3.4.4",
