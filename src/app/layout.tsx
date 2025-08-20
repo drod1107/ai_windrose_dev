@@ -1,24 +1,26 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeRegistry } from "./(site)/components/ThemeRegistry";
 import { Header } from "./(site)/components/Header";
 import { Footer } from "./(site)/components/Footer";
 import { Analytics } from "./(site)/components/Analytics";
-import { canonicalUrl, formatTitle } from "./(site)/lib/seo";
 
-export const metadata: Metadata = {
-  title: {
-    default: formatTitle(),
-    template: "%s | Windrose",
-  },
+export const metadata = {
+  metadataBase: new URL("https://ai.windrose.dev"),
+  alternates: { canonical: "/" },
+  title: "Windrose",
   description: "Researching AI safety",
-  metadataBase: new URL(canonicalUrl("/")),
-  alternates: { canonical: canonicalUrl("/") },
   openGraph: {
-    title: formatTitle(),
-    images: ["/og-image.png"], // Placeholder OG image
+    title: "Windrose",
+    description: "Researching AI safety",
+    url: "https://ai.windrose.dev/",
+    images: ["/og-image.png"],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Windrose",
+    description: "Researching AI safety",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
