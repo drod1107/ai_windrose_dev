@@ -2,7 +2,7 @@ import "./globals.css";
 import { ThemeRegistry } from "./(site)/components/ThemeRegistry";
 import { Header } from "./(site)/components/Header";
 import { Footer } from "./(site)/components/Footer";
-import { Analytics } from "./(site)/components/Analytics";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   metadataBase: new URL("https://ai.windrose.dev"),
